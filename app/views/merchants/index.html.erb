@@ -1,0 +1,21 @@
+
+	<h1> Welcome to my b2b online marketplace </h1>
+
+	<h3>Check out our available products</h3>
+
+
+	<% @products.each do |product| %>
+	<dl>
+		<h3><%= link_to product.name, merchant_product_path(product.merchant.id, product) %></h3>
+		<dt>Kind:</dt>
+		<dd><%= product.kind %></dd>
+		<dt>Price:</dt>
+		<dd><%= product.price %></dd>
+		<dt>Quantity:</dt>
+		<dd><%=product.quantity%></dd>
+		<dt>Merchant</dt>
+		<dd><%=link_to product.merchant.name, merchant_products_path(product.merchant.id) %></dd>
+		<dt>Description</dt>
+		<dd><p><%=product.description%></p></dd>
+	</dl>
+	<% end %>

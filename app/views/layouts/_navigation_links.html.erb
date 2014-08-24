@@ -1,0 +1,10 @@
+<%# add navigation links to this file %>
+<%# add navigation links to this file %>
+<% if merchant_signed_in? %>
+  <li><%= link_to 'Edit account', edit_merchant_registration_path %></li>
+  <li><%= link_to 'Sign out', destroy_merchant_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%= link_to 'Sign in', new_merchant_session_path %></li>
+  <li><%= link_to 'Sign up', new_merchant_registration_path %></li>
+<% end %>
+
